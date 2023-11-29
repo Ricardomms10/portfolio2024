@@ -1,0 +1,60 @@
+$light-color: #FFF; // substitua com sua cor de luz desejada
+$dark-color: #000; // substitua com sua cor escura desejada
+
+.appContainer {
+  background: $light-color;
+  color: $dark-color;
+  font-family: monospace;
+  font-size: 1.5rem;
+  transition: 0.3s;
+ 
+
+  .themeSwitcherArea {
+    border: 1px solid $light-color;
+    background: $dark-color;
+    border-radius: 2rem;
+    width: 4.5rem;
+    height: 2.5rem;
+    padding: 0.2rem;
+  }
+
+  .themeSwitcherButton {
+    position: relative;
+    display: block;
+    background: #f1aa02;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    border: 2px dashed $dark-color;
+    transition: 0.3s;
+
+    &::after {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      content: "";
+      background: $dark-color;
+      border-radius: 50%;
+      opacity: 0;
+      transition: 0.3s;
+    }
+  }
+}
+
+.themeSwitcher {
+  display: none;
+
+  &:checked + .appContainer {
+    background: $dark-color;
+    color: $light-color;
+  }
+
+  &:checked + .appContainer .themeSwitcherButton {
+    transform: translateX(100%);
+    border: none;
+  }
+
+  &:checked + .appContainer .themeSwitcherButton::after {
+    opacity: 1;
+  }
+}
