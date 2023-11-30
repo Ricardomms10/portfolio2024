@@ -45,10 +45,10 @@ export default function Layout({ children }: LayoutProps) {
             <NavBar />
             <style jsx global>{`
         body {
-          background-color: ${theme?.backgroundColor};
-          color: ${theme?.color};
+            background-color: ${theme?.backgroundColor};
+            color: ${theme?.color};
         }
-      `}</style>
+        `}</style>
 
             <main className="main-container">{children}</main>
 
