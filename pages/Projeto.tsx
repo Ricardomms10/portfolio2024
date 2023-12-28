@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
+
 interface MyProjectProps {
 
 }
@@ -13,6 +14,7 @@ interface MyProjectProps {
 const Projeto: React.FC<MyProjectProps> = () => {
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [selectedItem, setSelectedItem] = useState<Project | null>(null);
+
 
     const openModal = (item: Project) => {
         setSelectedItem(item);
@@ -62,8 +64,8 @@ const Projeto: React.FC<MyProjectProps> = () => {
                 </Swiper>
             </div>
             {modalOpen && selectedItem && (
-                <div className={style.modalContainer}>
-                    <div className={style.modalContent}>
+                <div className={`${style.modalContainer} ${selectedItem ? style.open : ''} `}>
+                    <div className={style.flex}>
                         <button className={style.closeButton} onClick={closeModal}>X</button>
                         <h1>{selectedItem.nome}</h1>
                         <ul>

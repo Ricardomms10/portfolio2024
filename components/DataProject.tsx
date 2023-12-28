@@ -1,6 +1,6 @@
 import React from 'react';
 
-import PokemonImage from '../public/assets/POKECOMPLETO.png';
+import Jokenpo from '../public/assets/JOKEPO.png';
 import CiliosImage from '../public/assets/CILIOSCOMPLETO.png';
 import SenaImage from '../public/assets/MEGACOMP.png';
 import TempoImage from '../public/assets/TEMPCOM.png';
@@ -52,11 +52,11 @@ export const data: Project[] = [
   },
   {
     id: '5',
-    image: PokemonImage,
-    nome: 'POKEDEX API',
-    link: 'https://github.com/Ricardomms10/Projeto-Pokedex',
-    descricao: 'Uma Pokedex que consome uma API.',
-    ling: 'React JS, TypeScript',
+    image: Jokenpo,
+    nome: 'JOKENPÔ',
+    link: 'https://github.com/Ricardomms10/JOKENPO',
+    descricao: 'Um jogo divertido de pedra, papel e tesoura.',
+    ling: 'Next.js, TypeScript e Sass/Scss',
   },
   {
     id: '6',

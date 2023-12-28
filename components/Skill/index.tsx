@@ -1,15 +1,23 @@
-// components/Skill.tsx
-
 import React from 'react';
 import { data } from './SkillData';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
-import styles from '../../styles/Skill.module.scss'; // Importe seu estilo (substitua pelo seu próprio caminho)
+import styles from '../../styles/Skill.module.scss'; 
 import Image from 'next/image';
 import { Pagination } from 'swiper/modules'
 
 const Skill: React.FC = () => {
-
+    const breakpoints = {
+        320: {
+            slidesPerView: 5,
+        },
+        480: {
+            slidesPerView: 8,
+        },
+        768: {
+            slidesPerView: 10,
+        },
+    };
 
 
     return (
@@ -20,6 +28,7 @@ const Skill: React.FC = () => {
                 slidesPerView={10}
                 pagination={{ clickable: true }}
                 modules={[ Pagination]}
+                breakpoints={breakpoints}
             >
                 {data.map((item) => (
                     <SwiperSlide className={styles.customSwipersLide} key={item.id}>
