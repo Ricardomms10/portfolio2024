@@ -13,10 +13,6 @@ $white: #fff;
     top: 0;
     width: 100%;
     margin-top: 1em;
-
-    @media (max-width: 890px) {
-        // Estilos específicos para telas menores que 890px
-    }
 }
 
 .menuContainer {
@@ -27,7 +23,7 @@ $white: #fff;
     margin-right: 10px;
 
     @media (max-width: 768px) {
-        display: none; // Oculta o menu em telas menores que 768px
+        display: none; 
     }
 }
 

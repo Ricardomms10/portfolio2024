@@ -1,6 +1,3 @@
-/* eslint-disable @next/next/no-head-element */
-// components/NavBar.tsx
-
 import Link from "next/link";
 import { useState, useContext } from "react";
 import style from "../styles/NavBar.module.scss";
@@ -34,9 +31,9 @@ const NavBar: React.FC<NavBarProps> = ({ customStyle }) => {
             </ul>
 
             <div className={style.hamburgerIcon} onClick={toggleMenu} style={customStyle}>
-            <i className="fas fa-bars"></i>
-
+                <i className="fas fa-bars"></i>
             </div>
+
             {isMenuOpen && (
                 <div className={style.overlayMenu} >
                     <Link href="/">
