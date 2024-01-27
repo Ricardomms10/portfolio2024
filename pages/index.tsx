@@ -6,7 +6,7 @@ import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import Skill from '@/components/Skill';
 import { ThemeContext, ThemeContextProps } from '../components/Layout';
 
-const curriculo = '/assets/curriculo2024.pdf';
+const curriculo = '/assets/Curriculo2024New.pdf';
 
 interface HomeProps {
   customStyle?: React.CSSProperties;

@@ -34,7 +34,6 @@ const Projeto: React.FC<MyProjectProps> = () => {
             </div>
             <div className={style.box}>
                 <Swiper
-
                     effect={'coverflow'}
                     grabCursor={true}
                     centeredSlides={true}
@@ -49,7 +48,6 @@ const Projeto: React.FC<MyProjectProps> = () => {
                     pagination={{ clickable: true }}
                     modules={[EffectCoverflow, Pagination]}
                     className={`${style.customSwiper} mySwiper`}
-
                 >
                     {data.map((item) => (
                         <SwiperSlide className={style.customSwiperSlide} key={item.id}>
@@ -84,7 +82,7 @@ const Projeto: React.FC<MyProjectProps> = () => {
                                     <span><a href={selectedItem.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        >Acessar repositório</a></span>
+                                    >Acessar repositório</a></span>
                                 </div>
                             </li>
                         </ul>

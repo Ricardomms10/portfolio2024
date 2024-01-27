@@ -30,9 +30,11 @@ $open: false;
     }
 }
 
+
 .box {
     width: 95%;
     object-fit: cover;
+    
 
     img {
         display: block;
@@ -85,6 +87,7 @@ $open: false;
         letter-spacing: 1.5px;
         font-weight: bold;
         color: blueviolet;
+        margin-bottom:10px  ;
     }
 
     h1 {
@@ -136,8 +139,8 @@ padding: 20px;
 
         li {
             display: flex;
-            align-items: center;
             justify-content: center;
+            margin-bottom: 10px;
 
             span {
                 padding: 2px;
@@ -162,9 +165,7 @@ padding: 20px;
 
     img {
         max-width: 50%;
-        /* A imagem não irá ultrapassar a largura do seu container */
         height: auto;
-        /* A altura se ajustará automaticamente */
     }
 }
 
