@@ -1,6 +1,6 @@
 import React, { ReactNode, createContext, useState } from 'react';
 import { NavBar } from './NavBar';
-import {Footer} from './Footer';  // Remova as chaves {}
+import {Footer} from './Footer'; 
 
 interface Theme {
     id: string;
