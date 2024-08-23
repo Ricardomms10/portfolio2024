@@ -6,7 +6,7 @@ import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import Skill from '@/components/Skill';
 import { ThemeContext, ThemeContextProps } from '../components/Layout';
 
-const curriculo = '/assets/Curriculo2024New.pdf';
+const curriculo = '/assets/CurriculoSeguranca (1).pdf';
 
 interface HomeProps {
   customStyle?: React.CSSProperties;
@@ -20,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ customStyle }) => {
       <div className={styles.box}>
         <span> OI, EU SOU RICARDO MALTA</span>
         <div className={styles.divisao}>
-          <h1>WEB</h1>
+          <h1>SECUTITY</h1>
           <div className={styles.react1}>
             <a
               href="https://www.linkedin.com/in/ricardo-malta-632b70164/"
@@ -41,13 +41,11 @@ const Home: React.FC<HomeProps> = ({ customStyle }) => {
             </a>
           </div>
         </div>
-        <h1>DEVELOPER</h1>
+        <h1>ANALYST</h1>
         <p>
-          Desenvolvedor Full-Stack apaixonado por transformar <br />
-          ideias em realidade através <br />
-          de código e design inovadores.<br /> Convido você a explorar meu
-          portfólio e descobrir <br />como posso trazer soluções criativas
-          para seus desafios tecnológicos.
+          Cursando Análise e Desenvolvimento de Sistemas, com foco na área de segurança da informação. <br />
+          Explore meu portfólio para conhecer os projetos que já desenvolvi na área de TI <br />
+          e acompanhar minha trajetória na segurança da informação.
         </p>
       </div>
       <Skill />
