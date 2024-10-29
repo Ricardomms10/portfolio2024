@@ -5,32 +5,32 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import { useState } from 'react';
 import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { Modal, Box, Button } from '@mui/material';
 
-
-interface MyProjectProps {
-
-}
+interface MyProjectProps { }
 
 const Projeto: React.FC<MyProjectProps> = () => {
-    const [modalOpen, setModalOpen] = useState<boolean>(false);
+    const [open, setOpen] = useState<boolean>(false);
     const [selectedItem, setSelectedItem] = useState<Project | null>(null);
-
 
     const openModal = (item: Project) => {
         setSelectedItem(item);
-        setModalOpen(true);
+        setOpen(true);
     };
 
     const closeModal = () => {
         setSelectedItem(null);
-        setModalOpen(false);
+        setOpen(false);
     };
 
     return (
         <div className={style.container}>
             <div className={style.title}>
-                <h1> Projetos </h1>
-                <p> Aqui estão alguns exemplos dos projetos que desenvolvi e estou trabalhando atualmente. <br /> Confira abaixo: </p>
+                <h1>PROJETOS</h1>
+                <p>
+                    Aqui estão alguns projetos que desenvolvi atualmente.
+                    Deslize e selecione o projeto que deseja ver.
+                </p>
             </div>
             <div className={style.box}>
                 <Swiper
@@ -61,39 +61,44 @@ const Projeto: React.FC<MyProjectProps> = () => {
                     ))}
                 </Swiper>
             </div>
-            {modalOpen && selectedItem && (
-                <div className={`${style.modalContainer} ${selectedItem ? style.open : ''} `}>
-                    <div className={style.flex}>
-                        <button className={style.closeButton} onClick={closeModal}>X</button>
-                        <h1>{selectedItem.nome}</h1>
-                        <ul>
-                            <li>
-                                <span><i className="fa-regular fa-file-lines"></i></span>
-                                <div>
-                                    <span><b>Descrição:</b></span>
-                                    <span>{selectedItem.descricao}</span>
-                                </div>
-                            </li>
+            <Modal open={open} onClose={closeModal} className={style.modal}>
+                <Box className={style.modalContent}>
+                    {selectedItem && (
+                        <>
+                            <h2 className={style.modalTitle}>{selectedItem.nome}</h2>
+                            <Image src={selectedItem.image} alt={selectedItem.nome} className={style.modalImage} />
+                            <ul className={style.modalList}>
+                                <li>
+                                    <div>
+                                        <span>Descrição:</span>
+                                        <p>{selectedItem.descricao}</p>
+                                    </div>
+                                </li>
 
-                            <li>
-                                <span><i className="fa-regular fa-user"></i></span>
-                                <div>
-                                    <span><b>Repositório:</b></span>
-                                    <span><a href={selectedItem.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >Acessar repositório</a></span>
-                                </div>
-                            </li>
-                        </ul>
-                        <Image src={selectedItem.image} alt="Slider" />
-                        <div>
-                            <span><b>Linguagens utilizadas: </b></span>
-                            <span>{selectedItem.ling} </span>
-                        </div>
-                    </div>
-                </div>
-            )}
+                                <li>
+                                    <div>
+                                        <span>Linguagens utilizadas:</span>
+                                        <p>{selectedItem.ling}</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div>
+                                        <span><b>Repositório:</b></span>
+                                        <a href={selectedItem.link} target="_blank" rel="noopener noreferrer">
+                                            Acessar repositório
+                                        </a>
+                                    </div>
+                                </li>
+
+                            </ul>
+                            <button onClick={closeModal} className={style.button}>
+                                Fechar
+                            </button>
+                        </>
+                    )}
+                </Box>
+            </Modal>
         </div>
     );
 };

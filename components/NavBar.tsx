@@ -1,15 +1,14 @@
 import Link from "next/link";
-import { useState, useContext } from "react";
+import { useState } from "react";
 import style from "../styles/NavBar.module.scss";
 import BtnOff from "./BtnOff";
-import { ThemeContext, ThemeContextProps } from "./Layout";
 
 interface NavBarProps {
     customStyle?: React.CSSProperties;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ customStyle }) => {
-    const { theme } = useContext<ThemeContextProps>(ThemeContext);
+    
     const [isMenuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => {

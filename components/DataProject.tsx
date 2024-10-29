@@ -18,14 +18,7 @@ export interface Project {
 }
 
 export const data: Project[] = [
-  {
-    id: '1',
-    image: AppAcademia,
-    nome: 'APP ACADEMIA',
-    link: 'https://github.com/Ricardomms10/AppAcademia',
-    descricao: 'App de academia para o aluno ter tudo na palma da mão.',
-    ling: 'React Native',
-  },
+ 
   {
     id: '2',
     image: Academia,
@@ -66,6 +59,14 @@ export const data: Project[] = [
     descricao: 'Meu portfólio',
     ling: 'React JS, Styled Components e Material IU',
   },
+  {
+    id: '1',
+    image: AppAcademia,
+    nome: 'APP ACADEMIA',
+    link: 'https://github.com/Ricardomms10/AppAcademia',
+    descricao: 'App de academia para o aluno ter tudo na palma da mão.',
+    ling: 'React Native',
+  },
 ];
 
-// Agora você pode usar o array de projetos (data) em seus componentes React.
+
