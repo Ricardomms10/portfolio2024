@@ -30,12 +30,12 @@ $fontPlay: 'Play', sans-serif;
 
 .box {
     object-fit: cover;
-
     img {
         display: block;
         height: auto;
         object-fit: cover;
         padding: 10px;
+        border-radius: 20px;
     }
 }
 
@@ -43,12 +43,14 @@ $fontPlay: 'Play', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 .customSwiperSlide {
     background-position: center;
     background-size: cover;
     width: 400px;
+   
 }
 
 .slideContent {
@@ -86,7 +88,7 @@ $fontPlay: 'Play', sans-serif;
 }
 
 .modalContent {
-    background-color: rgb(165, 164, 164); // Cor padrão
+    background-color: #FFF; 
     border-radius: 8px;
     border: none;
     padding: 20px;
