@@ -85,7 +85,7 @@ const Projeto: React.FC<MyProjectProps> = () => {
                                 <li>
                                     <div>
                                         <span><b>Repositório:</b></span>
-                                        <a href={selectedItem.link} target="_blank" rel="noopener noreferrer">
+                                        <a href={selectedItem.link}  target="_blank" rel="noopener noreferrer">
                                             Acessar repositório
                                         </a>
                                     </div>
