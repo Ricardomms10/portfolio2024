@@ -48,6 +48,20 @@ const Projeto: React.FC<MyProjectProps> = () => {
                     pagination={{ clickable: true }}
                     modules={[EffectCoverflow, Pagination]}
                     className={`${style.customSwiper} mySwiper`}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1,
+                            spaceBetween: 10,
+                        },
+                        768: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 30,
+                        },
+                    }}
                 >
                     {data.map((item) => (
                         <SwiperSlide className={style.customSwiperSlide} key={item.id}>
@@ -85,7 +99,7 @@ const Projeto: React.FC<MyProjectProps> = () => {
                                 <li>
                                     <div>
                                         <span><b>Repositório:</b></span>
-                                        <a href={selectedItem.link}  target="_blank" rel="noopener noreferrer">
+                                        <a href={selectedItem.link} target="_blank" rel="noopener noreferrer">
                                             Acessar repositório
                                         </a>
                                     </div>

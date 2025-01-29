@@ -1,13 +1,11 @@
-$light-color: #FFF; 
+$light-color: #FFF;
 $dark-color: #000;
 
 .appContainer {
-  background: $light-color;
   color: $dark-color;
   font-family: monospace;
   font-size: 1.5rem;
   transition: 0.3s;
- 
 
   .themeSwitcherArea {
     border: 1px solid $light-color;
@@ -44,17 +42,16 @@ $dark-color: #000;
 .themeSwitcher {
   display: none;
 
-  &:checked + .appContainer {
-    background: $dark-color;
+  &:checked+.appContainer {
     color: $light-color;
   }
 
-  &:checked + .appContainer .themeSwitcherButton {
+  &:checked+.appContainer .themeSwitcherButton {
     transform: translateX(100%);
     border: none;
   }
 
-  &:checked + .appContainer .themeSwitcherButton::after {
+  &:checked+.appContainer .themeSwitcherButton::after {
     opacity: 1;
   }
 }

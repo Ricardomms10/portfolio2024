@@ -1,13 +1,9 @@
-// styles/Projeto.module.scss
-
 $fontPlay: 'Play', sans-serif;
 
 .container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    min-height: 100vh;
 }
 
 .title {
@@ -29,49 +25,39 @@ $fontPlay: 'Play', sans-serif;
 }
 
 .box {
-    object-fit: cover;
-    img {
-        display: block;
-        height: auto;
-        object-fit: cover;
-        padding: 10px;
-        border-radius: 20px;
-    }
-}
-
-.customSwiper {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    
 }
 
 .customSwiperSlide {
-    background-position: center;
-    background-size: cover;
-    width: 400px;
-   
+    display: flex;
+    justify-content: center;
+    width: 200px; 
+ 
+    margin: 10px; 
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    @media (max-width: 768px) {
+        width: 90%; 
+        max-width: 350px; 
+    }
+
+    @media (max-width: 480px) {
+        width: 90%; 
+        max-width: 300px; 
+    }
 }
 
-.slideContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 30px;
-}
 
 .centeredImage {
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: auto;
     object-fit: contain;
 }
 
 .text {
     text-align: center;
-    padding: 10px;
-    height: 100%;
-
     h1 {
         font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem);
         font-family: $fontPlay;
@@ -85,22 +71,23 @@ $fontPlay: 'Play', sans-serif;
     align-items: center;
     justify-content: center;
     color: blueviolet;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .modalContent {
-    background-color: #FFF; 
+    background-color: #FFF;
     border-radius: 8px;
     border: none;
     padding: 20px;
     width: 90%;
-    max-width: 600px;
+    max-width: 500px;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
-
 
 .modalImage {
     width: 100%;
@@ -126,7 +113,7 @@ $fontPlay: 'Play', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 30px  ;
+            padding: 0 30px;
 
             span {
                 font-weight: bold;
@@ -136,21 +123,21 @@ $fontPlay: 'Play', sans-serif;
 
             p {
                 font-size: 1.5rem;
-                color:black;
+                color: black;
                 font-weight: bold;
             }
 
             a {
                 font-size: 1.5rem;
                 font-weight: bold;
-                color: blue
+                color: blue;
             }
         }
     }
 }
 
 .button {
-    margin-top: 10px; 
+    margin-top: 10px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import style from "../styles/NavBar.module.scss";
 import BtnOff from "./BtnOff";
 
@@ -8,21 +8,44 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ customStyle }) => {
-    
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const menuRef = useRef<HTMLDivElement | null>(null);
 
     const toggleMenu = () => {
         setMenuOpen(!isMenuOpen);
     };
 
+    const closeMenu = () => {
+        setMenuOpen(false);
+    };
+
+    // Fecha o menu quando clicar fora dele
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+                closeMenu();
+            }
+        };
+
+        if (isMenuOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [isMenuOpen]);
+
     return (
         <header className={style.headContainer} style={customStyle}>
             <ul className={style.menuContainer}>
-                <Link href="/">
-                    <li className={style.textMenu} >HOME</li>
+                <Link href="/" onClick={closeMenu}>
+                    <li className={style.textMenu}>HOME</li>
                 </Link>
-                <Link href="/Projeto">
-                    <li className={style.textMenu} >PROJETOS</li>
+                <Link href="/Projeto" onClick={closeMenu}>
+                    <li className={style.textMenu}>PROJETOS</li>
                 </Link>
                 <li>
                     <BtnOff />
@@ -34,12 +57,12 @@ const NavBar: React.FC<NavBarProps> = ({ customStyle }) => {
             </div>
 
             {isMenuOpen && (
-                <div className={style.overlayMenu} >
-                    <Link href="/">
-                        <p className={style.menuLink}><p>HOME</p></p>
+                <div className={style.overlayMenu} ref={menuRef}>
+                    <Link href="/" onClick={closeMenu}>
+                        <p className={style.menuLink}>HOME</p>
                     </Link>
-                    <Link href="/Projeto">
-                        <p className={style.menuLink}><p>PROJETOS</p></p>
+                    <Link href="/Projeto" onClick={closeMenu}>
+                        <p className={style.menuLink}>PROJETOS</p>
                     </Link>
                     <BtnOff />
                 </div>

@@ -43,10 +43,9 @@ const Home: React.FC<HomeProps> = ({ customStyle }) => {
         </div>
         <h1>DEVELOPER</h1>
         <p>
-          Sou desenvolvedor web e estudante de Análise e Desenvolvimento de Sistemas (EAD), 
-          além de me aprofundar na segurança 
-          cibernética para agregar proteção aos meus projetos e trabalhos. 
-          Explore meu portfólio e conheça como posso transformar desafios tecnológicos em soluções inovadoras e seguras.
+        Sou desenvolvedor web e estudante de Análise e Desenvolvimento de Sistemas (EAD).
+        Ganhei experiência valiosa em trabalhos freelancer, onde criei soluções inovadoras para diversos projetos.
+        Explore meu portfólio e veja como posso transformar desafios tecnológicos em soluções eficientes.
         </p>
       </div>
       <Skill />

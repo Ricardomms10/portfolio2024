@@ -60,7 +60,7 @@ $white: #fff;
     position: fixed;
     top: 60px;
     right: 20px;
-    background-color: $white;
+    background-color: $gray;
     padding: 10px;
     border: 1px solid $lightGray;
     display: flex;
@@ -74,7 +74,7 @@ $white: #fff;
 
 .menuLink {
     text-decoration: none;
-    color: $gray;
+    color: $white;
     margin-bottom: 10px;
     display: none;
 
