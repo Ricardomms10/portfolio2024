@@ -19,7 +19,7 @@ const NavBar: React.FC<NavBarProps> = ({ customStyle }) => {
         <header className={style.headContainer} style={customStyle}>
             <ul className={style.menuContainer}>
                 <Link href="/">
-                    <li className={style.textMenu} >SOBRE</li>
+                    <li className={style.textMenu} >HOME</li>
                 </Link>
                 <Link href="/Projeto">
                     <li className={style.textMenu} >PROJETOS</li>

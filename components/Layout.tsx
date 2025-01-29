@@ -33,10 +33,10 @@ interface LayoutProps {
 }
 
 export default function Layout({ children }: LayoutProps) {
-    const [theme, setTheme] = useState(themes.light);
+    const [theme, setTheme] = useState(themes.dark);
 
     const toggleTheme = () => {
-        setTheme((curr) => (curr === themes.light ? themes.dark : themes.light));
+        setTheme((curr) => (curr === themes.dark ? themes.light : themes.dark));
     };
 
     return (
