@@ -1,25 +1,78 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlassChart } from '@fortawesome/free-solid-svg-icons';
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import Tab from '@mui/material/Tab';
+import TabContext from '@mui/lab/TabContext';
+import TabList from '@mui/lab/TabList';
+import TabPanel from '@mui/lab/TabPanel';
 import style from '../styles/Choice.module.scss';
-import Link from 'next/link';
+import WebProjects from '@/components/WebProjects';
+import ProjectData from '@/components/ProjectData';
 
-interface ChoiceProps { }
+const Choice: React.FC = () => {
+    const [value, setValue] = React.useState('1');
 
-const Choice: React.FC<ChoiceProps> = () => {
+    const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+        setValue(newValue);
+    };
+
     return (
         <div className={style.container}>
             <h1>PROJETOS</h1>
-            <div className={style.buttonGroup}>
-                <button>
-                    <FontAwesomeIcon icon={faCode} style={{ marginRight: '0.5rem' }} />
-                    <Link href="/Projeto"> Web Developer</Link>
-                </button>
-                <button>
-                    <FontAwesomeIcon icon={faMagnifyingGlassChart} />
-                    <Link href="/Projeto"> Data Analyst</Link>
-                </button>
-            </div>
+            <Box className={style.buttonGroup} sx={{ width: '100%' }}>
+                <TabContext value={value}>
+                    <Box >
+                        <TabList
+                            onChange={handleChange}
+                            aria-label="Tabs de projetos"
+                            textColor="secondary"
+                            indicatorColor="secondary"
+                        >
+                            <Tab
+                                label="Data Analyst"
+                                value="1"
+                                sx={{
+                                    color: '#a64af5',
+                                    fontSize: {
+                                        xs: '1rem',
+                                        sm: '1rem',
+                                        md: '1.5rem',
+                                    },
+                                    fontWeight: 'bold',
+                                    '&.Mui-selected': {
+                                        color: '#7b1fa2',
+                                    },
+                                }}
+                            />
+
+                            <Tab
+                                label="Web Developer"
+                                value="2"
+                                sx={{
+                                    color: '#a64af5',
+                                    fontSize: {
+                                        xs: '1rem',
+                                        sm: '1rem',
+                                        md: '1.5rem',
+                                    },
+                                    fontWeight: 'bold',
+                                    '&.Mui-selected': {
+                                        color: '#7b1fa2',
+                                    },
+                                }}
+                            />
+
+                        </TabList>
+                    </Box>
+                    <TabPanel value="1">
+                        <ProjectData />
+
+                    </TabPanel>
+                    <TabPanel value="2">
+
+                        <WebProjects />
+                    </TabPanel>
+                </TabContext>
+            </Box>
         </div>
     );
 };
