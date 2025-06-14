@@ -61,7 +61,7 @@ const NavBar: React.FC<NavBarProps> = ({ customStyle }) => {
                     <Link href="/" onClick={closeMenu}>
                         <p className={style.menuLink}>HOME</p>
                     </Link>
-                    <Link href="/Projeto" onClick={closeMenu}>
+                    <Link href="/Choice" onClick={closeMenu}>
                         <p className={style.menuLink}>PROJETOS</p>
                     </Link>
                     <BtnOff />
