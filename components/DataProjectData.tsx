@@ -12,8 +12,8 @@ export interface DataProject {
 export const data: DataProject[] = [
     {
         id: 1,
-        nome: 'Em Densenvolvimento',
-        descricao: 'Em Densenvolvimento',
+        nome: 'Em Desenvolvimento',
+        descricao: 'Em Desenvolvimento',
         ling: '.',
         imagem: DataImagem
     },
