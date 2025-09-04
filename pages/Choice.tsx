@@ -6,7 +6,6 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import style from '../styles/Choice.module.scss';
 import WebProjects from '@/components/WebProjects';
-import ProjectData from '@/components/ProjectData';
 
 const Choice: React.FC = () => {
     const [value, setValue] = React.useState('1');
@@ -20,7 +19,7 @@ const Choice: React.FC = () => {
             <h1>PROJETOS</h1>
             <Box className={style.buttonGroup} sx={{ width: '100%' }}>
                 <TabContext value={value}>
-                    <Box >
+                    <Box>
                         <TabList
                             onChange={handleChange}
                             aria-label="Tabs de projetos"
@@ -28,7 +27,7 @@ const Choice: React.FC = () => {
                             indicatorColor="secondary"
                         >
                             <Tab
-                                label="Data Analyst"
+                                label="Web Developer"
                                 value="1"
                                 sx={{
                                     color: '#a64af5',
@@ -43,32 +42,9 @@ const Choice: React.FC = () => {
                                     },
                                 }}
                             />
-
-                            <Tab
-                                label="Web Developer"
-                                value="2"
-                                sx={{
-                                    color: '#a64af5',
-                                    fontSize: {
-                                        xs: '1rem',
-                                        sm: '1rem',
-                                        md: '1.5rem',
-                                    },
-                                    fontWeight: 'bold',
-                                    '&.Mui-selected': {
-                                        color: '#7b1fa2',
-                                    },
-                                }}
-                            />
-
                         </TabList>
                     </Box>
                     <TabPanel value="1">
-                        <ProjectData />
-
-                    </TabPanel>
-                    <TabPanel value="2">
-
                         <WebProjects />
                     </TabPanel>
                 </TabContext>

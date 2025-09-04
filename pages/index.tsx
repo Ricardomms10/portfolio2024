@@ -43,8 +43,7 @@ const Home: React.FC<HomeProps> = ({ customStyle }) => {
         </div>
         <h1>DEVELOPER</h1>
         <p>
-          Atuo na área de tecnologia, com sólida base em lógica de programação e gestão de bancos de dados. Atualmente, concentro meu trabalho em desenvolvimento e automações, criando soluções que otimizam processos e potencializam resultados.
-          Explore meu portfólio e descubra como transformo desafios tecnológicos em soluções práticas e eficazes.
+          Experiência em JavaScript, conhecimentos em Python e aprendizado em C#, com familiaridade em frameworks. Estudante de Análise e Desenvolvimento de Sistemas (UNINOVE EAD), aplico meus conhecimentos em projetos práticos e estou em constante evolução técnica.
         </p>
       </div>
       <Skill />
