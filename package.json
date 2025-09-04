@@ -36,5 +36,8 @@
     "material": "^0.7.7",
     "sass": "^1.69.5",
     "typescript": "^5.3.2"
+  },
+  "engines": {
+    "node": ">=22.x"
   }
 }
